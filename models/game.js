@@ -13,7 +13,7 @@ Game.prototype.deal = function () {
   this.player2.cards = [card2,card4,card6];
 };
 
-Game.prototype.compare = function (category) {
+Game.prototype.compare = function (category, p1card, p2card) {
   if (p1card.category > p2card.category) {
     return player1.name;
   } else if (p1card.category == p2card.category){
@@ -29,7 +29,7 @@ Game.prototype.turn = function () {
 
   let currentplayer = wonlastturn;
 
-  let result = Game.compare(strength);
+  let result = Game.compare('strength', p1card, p2card);
 
   if (result == 'Draw!' || result == currentplayer.name) {
     currentplayer.cards.push(p1card, p2card);

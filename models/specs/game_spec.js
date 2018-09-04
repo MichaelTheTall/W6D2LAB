@@ -31,7 +31,7 @@ describe("game", function() {
   it("should compare cards", function() {
     let p1card = card1;
     let p2card = card2;
-    assert.strictEqual(game.compare('strength'), 'Bob');
+    assert.strictEqual(game.compare('strength', p1card, p2card), 'Bob');
   });
   it("should play a turn", function() {
 
